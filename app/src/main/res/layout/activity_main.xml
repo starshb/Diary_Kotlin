@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/book_color"
+    tools:context="diary.aop.diary01.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50sp"
+        android:fontFamily="@font/bm_euljiro_10_years_later"
+        android:text="@string/book_title"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@id/passwordLayout"
+        app:layout_constraintEnd_toEndOf="@id/passwordLayout"
+        app:layout_constraintBottom_toTopOf="@id/passwordLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:padding="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <NumberPicker
+            android:id="@+id/firstNumberPicker"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="@color/dark_gray"
+            android:theme="@style/AppTheme.Picker"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/openButton"
+            app:layout_constraintEnd_toStartOf="@id/secondNumberPicker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <NumberPicker
+            android:id="@+id/secondNumberPicker"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="@color/dark_gray"
+            android:theme="@style/AppTheme.Picker"
+            app:layout_constraintTop_toTopOf="@id/firstNumberPicker"
+            app:layout_constraintStart_toEndOf="@id/firstNumberPicker"
+            app:layout_constraintEnd_toStartOf="@id/thirdNumberPicker" />
+
+        <NumberPicker
+            android:id="@+id/thirdNumberPicker"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="@color/dark_gray"
+            android:theme="@style/AppTheme.Picker"
+            app:layout_constraintTop_toTopOf="@id/firstNumberPicker"
+            app:layout_constraintStart_toEndOf="@id/secondNumberPicker"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/openButton"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintTop_toTopOf="@id/firstNumberPicker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/firstNumberPicker"
+            app:layout_constraintBottom_toBottomOf="@id/firstNumberPicker" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changePasswordButton"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/openButton"
+            app:layout_constraintStart_toStartOf="@id/openButton"
+            app:layout_constraintEnd_toEndOf="@id/openButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
